@@ -56,3 +56,58 @@
     </div>
   </article>
 </div>
+<script>
+/* Correctifs "Actualité Guinée" — sans créer de nouveau fichier */
+(function () {
+  const grid = document.querySelector('.grid, .actus-grid, .cards');
+  if (!grid) return;
+
+  // 1) Retirer TV5MONDE (texte ou URL)
+  document.querySelectorAll('.refs a').forEach(a => {
+    if (/tv5monde/i.test(a.textContent) || /tv5monde/i.test(a.href)) {
+      a.remove();
+      const refs = a.closest('.refs');
+      if (refs && refs.querySelectorAll('a').length === 0) refs.remove();
+    }
+  });
+
+  // 2) Supprimer la carte du 13 septembre 2025 (New York)
+  document.querySelectorAll('time[datetime="2025-09-13"]').forEach(t => t.closest('.card')?.remove());
+
+  // 3) Ajouter Reuters + Le Monde avant la carte "6 septembre 2025"
+  const anchor = grid.querySelector('time[datetime="2025-09-06"]')?.closest('.card') || grid.firstElementChild;
+
+  const hasLeMonde = !!grid.querySelector('a[href*="lemonde.fr/afrique/article/2025/10/02"]');
+  const hasReuters = !!grid.querySelector('a[href*="reuters.com/world/africa/guinea-announces-first-post-coup-presidential-vote-december-28-2025-09-29"]');
+
+  function insert(html) {
+    const wrap = document.createElement('div');
+    wrap.innerHTML = html.trim();
+    grid.insertBefore(wrap.firstElementChild, anchor);
+  }
+
+  if (!hasReuters) {
+    insert(`
+      <article class="card">
+        <header><time datetime="2025-09-29">29&nbsp;septembre&nbsp;2025</time> — <span class="city">Guinée</span></header>
+        <div>Annonce officielle : la présidentielle est <strong>fixée au 28&nbsp;décembre&nbsp;2025</strong>. Réactions critiques sur le calendrier.</div>
+        <div class="refs">:
+          <a href="https://www.reuters.com/world/africa/guinea-announces-first-post-coup-presidential-vote-december-28-2025-09-29/" target="_blank" rel="noopener">Reuters</a>
+        </div>
+      </article>
+    `);
+  }
+
+  if (!hasLeMonde) {
+    insert(`
+      <article class="card">
+        <header><time datetime="2025-10-02">2&nbsp;octobre&nbsp;2025</time> — <span class="city">Guinée</span></header>
+        <div>L’enlèvement du père d’un journaliste <strong>suscite l’indignation</strong> et relance les inquiétudes sur le climat sécuritaire.</div>
+        <div class="refs">:
+          <a href="https://www.lemonde.fr/afrique/article/2025/10/02/en-guinee-l-enlevement-du-pere-d-un-journaliste-suscite-l-indignation_6644056_3212.html" target="_blank" rel="noopener">Le&nbsp;Monde</a>
+        </div>
+      </article>
+    `);
+  }
+})();
+</script>

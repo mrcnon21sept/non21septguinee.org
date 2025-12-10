@@ -1,5 +1,5 @@
 [build]
-  publish = "./"
+  publish = "NON21SEPT_SITE_FULL_v18_MOD"
   command = ""
 
 [[redirects]]

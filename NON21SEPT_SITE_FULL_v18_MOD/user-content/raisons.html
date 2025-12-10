@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MCBR — Informations &amp; Actualités</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+ body { padding-top: 70px; }
+ .banner-fixe { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; 
+ background: #111; color: #fff; padding: 10px 16px; 
+ box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+ .banner-fixe .cta { display:inline-block; margin-left: 12px; padding: 6px 10px; 
+ background:#e3342f; color:#fff; border-radius:6px; text-decoration:none; }
+ .banner-fixe .close { float:right; background:transparent; border:none; color:#fff; font-size:20px; cursor:pointer; }
+ </style>
+<style>
+/* === Actualités (auto) === */
+:root{--gn-green:#009e49;--gn-yellow:#fcd116;--gn-red:#ce1126}
+.hero-gn{background:linear-gradient(90deg,var(--gn-green),var(--gn-yellow),var(--gn-red));color:#111;padding:16px;border-radius:12px;margin:16px 0}
+.hero-gn h2{margin:0 0 4px;font-size:1.6rem}
+.badge{display:inline-block;padding:.25rem .5rem;border-radius:.5rem;border:1px solid #0001;font-size:.8rem;background:#fff}
+#Actualités{scroll-margin-top:80px}
+.Actualités-list{display:grid;gap:12px;margin:16px 0}
+.actualite{background:#fff;border:1px solid #eee;border-left:6px solid var(--gn-red);padding:12px;border-radius:10px}
+.actualite time{font-weight:600}
+.flag-gn{display:inline-block;width:28px;height:18px;vertical-align:middle;border:1px solid #0002;margin-right:6px;background:linear-gradient(90deg,#009e49 0 33%,#fcd116 33% 66%,#ce1126 66% 100%)}
+#Actualités{min-height:120vh} /* assure un défilement visible */
+</style><style>
+/* === Actualités (auto) === */
+:root{--gn-green:#009e49;--gn-yellow:#fcd116;--gn-red:#ce1126}
+.hero-gn{background:linear-gradient(90deg,var(--gn-green),var(--gn-yellow),var(--gn-red));color:#111;padding:16px;border-radius:12px;margin:16px 0}
+.hero-gn h2{margin:0 0 4px;font-size:1.6rem}
+.badge{display:inline-block;padding:.25rem .5rem;border-radius:.5rem;border:1px solid #0001;font-size:.8rem;background:#fff}
+#Actualités{scroll-margin-top:80px}
+.Actualités-list{display:grid;gap:12px;margin:16px 0}
+.actualite{background:#fff;border:1px solid #eee;border-left:6px solid var(--gn-red);padding:12px;border-radius:10px}
+.actualite time{font-weight:600}
+.flag-gn{display:inline-block;width:28px;height:18px;vertical-align:middle;border:1px solid #0002;margin-right:6px;background:linear-gradient(90deg,#009e49 0 33%,#fcd116 33% 66%,#ce1126 66% 100%)}
+#Actualités{min-height:120vh}
+</style><style>
+/* === Actualités (auto, consolidées) === */
+:root{--gn-green:#009e49;--gn-yellow:#fcd116;--gn-red:#ce1126}
+.hero-gn{background:linear-gradient(90deg,var(--gn-green),var(--gn-yellow),var(--gn-red));color:#111;padding:16px;border-radius:12px;margin:16px 0}
+.hero-gn h2{margin:0 0 4px;font-size:1.6rem}
+.badge{display:inline-block;padding:.25rem .5rem;border-radius:.5rem;border:1px solid #0001;font-size:.8rem;background:#fff}
+#actualites{scroll-margin-top:80px;min-height:130vh}
+.actualites-list{display:grid;gap:12px;margin:16px 0}
+.actualite{background:#fff;border:1px solid #eee;border-left:6px solid var(--gn-red);padding:12px;border-radius:10px}
+.actualite time{font-weight:600}
+.flag-gn{display:inline-block;width:28px;height:18px;vertical-align:middle;border:1px solid #0002;margin-right:6px;background:linear-gradient(90deg,#009e49 0 33%,#fcd116 33% 66%,#ce1126 66% 100%)}
+.gallery{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.gallery img{display:block;max-width:180px;height:auto;border-radius:8px;border:1px solid #0001}
+</style><style>
+/* === Actualités (consolidées, défilement) v10 === */
+:root{--gn-green:#009e49;--gn-yellow:#fcd116;--gn-red:#ce1126}
+.hero-gn{background:linear-gradient(90deg,var(--gn-green),var(--gn-yellow),var(--gn-red));color:#111;padding:16px;border-radius:12px;margin:16px 0}
+.hero-gn h2{margin:0 0 4px;font-size:1.6rem}
+.badge{display:inline-block;padding:.25rem .5rem;border-radius:.5rem;border:1px solid #0001;font-size:.8rem;background:#fff}
+#actualites{scroll-margin-top:80px;min-height:130vh}
+.actualites-list{display:grid;gap:12px;margin:16px 0}
+.actualite{background:#fff;border:1px solid #eee;border-left:6px solid var(--gn-red);padding:12px;border-radius:10px}
+.actualite time{font-weight:600}
+.flag-gn{display:inline-block;width:28px;height:18px;vertical-align:middle;border:1px solid #0002;margin-right:6px;background:linear-gradient(90deg,#009e49 0 33%,#fcd116 33% 66%,#ce1126 66% 100%)}
+.gallery{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.gallery img{display:block;max-width:180px;height:auto;border-radius:8px;border:1px solid #0001}
+</style></head>
+<body>
+<style id="raisons-orange-tighten">
+li:empty { display:none !important; }
+:where(p,ul,ol,h1,h2,h3,h4,h5,h6):first-child { margin-top: 0 !important; }
+:where(p,ul,ol,h1,h2,h3,h4,h5,h6):last-child  { margin-bottom: 0 !important; }
+*:last-child > :where(p,ul,ol):last-child { margin-bottom: 0 !important; }
+</style>
+<div class="banner-fixe" id="banner-fixe" style="background-color:#c00;color:#000;background-color:#c00;color:#000;">
+<strong>Boycott ou Non au référendum</strong> — Nous n’avons pas besoin d’une nouvelle constitution mais du respect des principes d’un État de droit — Libérez les détenus politiques • Fin de la transition
+ <a href="/contact.html" style="color:inherit;text-decoration:inherit;cursor:pointer">Agissons ensemble pour faire barrage à ce référendum</a>
+<button aria-label="Fermer" class="close" onclick="document.getElementById('banner-fixe').style.display='none'">×</button>
+</div>
+<header>
+<h1>Non au référendum du 21 septembre 2025 en Guinée</h1>
+<p>Pour une Guinée démocratique et inclusive</p>
+<p style="font-weight:bold; color:red; font-size:1.2em;">Nous n’avons pas besoin d’une nouvelle constitution mais du respect des principes d’un État de droit</p>
+<nav class="nav">
+<a href="#raison">Pourquoi dire NON ?</a>
+<a href="#manifeste">Notre manifeste</a>
+<a href="#Actualités" rel="noopener" target="_blank">L’actualité</a>
+</nav>
+</header>
+<h3>Fermeture des médias &amp; musèlement de la presse</h3>
+<ul>
+<li>Retrait des agréments et interdiction de six médias majeurs (Djoma TV/FM, Espace TV/FM, Sweet FM, FIM FM) – décision des 21–22 mai 2024, toujours en vigueur un an après.</li>
+<li>Blocages et restrictions des réseaux sociaux documentés depuis 2023 (Facebook, WhatsApp, X/Twitter, TikTok, YouTube).</li>
+</ul>
+<h3>Fragilisation volontaire des partis politiques</h3>
+<ul>
+<li>Dissolution de dizaines de partis, suspension/« observation » de grandes formations d’opposition, créant un terrain électoral déséquilibré et visant à écarter les candidatures crédibles face au CNRD.</li>
+</ul>
+<ul>
+<li><a href="https://www.rfi.fr/fr/afrique/20250703-guin%C3%A9e-le-contenu-du-projet-de-nouvelle-constitution-rendu-public-par-les-autorit%C3%A9s-de-transition" rel="noopener" target="_blank">RFI – Interdiction de médias (22 mai 2024)</a></li>
+
+
+<li><a href="https://rsf.org/fr/un-avenir-pour-la-presse-en-guin%C3%A9e-pas-sans-les-m%C3%A9dias-toujours-interdits" rel="noopener" target="_blank">RSF – Un an après, six médias toujours interdits (22 mai 2025)</a></li>
+<li><a href="https://cpj.org/africa/guinea/" rel="noopener" target="_blank">CPJ – Licences révoquées, censure &amp; blocages (mai 2024)</a></li>
+<li><a href="https://www.amnesty.org/en/location/africa/west-and-central-africa/guinea/report-guinea/" rel="noopener" target="_blank">Amnesty – Rapport Guinée 2024/25</a></li>
+<li><a href="https://www.hrw.org/fr/news/2024/12/02/guinee-les-droits-humains-en-peril-alors-que-la-transition-promise-se-fait-attendre" rel="noopener" target="_blank">HRW – Droits en péril &amp; transition qui déraille (2 déc. 2024)</a></li>
+<li><a href="https://apnews.com/article/1cd3e4f2d0ac45c327bf97f5368abcf2" rel="noopener" target="_blank">AP – Dissolution de partis (28 oct. 2024)</a></li>
+<li><a href="https://www.lemonde.fr/afrique/article/2024/10/29/en-Guin%C3%A9e-le-regime-militaire-lance-l-offensive-contre-les-partis-politiques_6365598_3212.html" rel="noopener" target="_blank">Le Monde – Offensive contre les partis (29 oct. 2024)</a></li>
+<li><a href="https://pulse.internetsociety.org/en/shutdowns/guinea-enforce-service-blocking-for-second-time-in-2023/" rel="noopener" target="_blank">Internet Society/OONI – Restrictions réseaux (2023–2024)</a></li>
+</ul>
+<!-- Additional reasons to say NO -->
+<section>
+<h3>Des promesses non tenues</h3>
+<p>
+ Après son coup d’État de septembre 2021, le général Doumbouya avait
+ promis une transition de deux ans et des élections avant la fin de
+ 2024. Pourtant, aucune échéance électorale n’a été respectée ; la
+ transition s’éternise et les engagements de rendre le pouvoir aux
+ civils sont restés lettre morte <sup><a href="#footnote3">[3]</a></sup>.
+ </p>
+<h3>Une constitution sur mesure</h3>
+<p>
+ Le projet de constitution présenté en juillet 2024 pourrait permettre au
+ chef de la junte de se porter candidat à la prochaine présidentielle,
+ contournant l’interdiction édictée par la charte de transition
+ <sup><a href="#footnote3">[3]</a></sup>. Nous refusons d’entériner un
+ texte taillé pour prolonger un mandat issu d’un coup d’État.
+ </p>
+<h3>Un climat de répression</h3>
+<p>
+ Depuis 2022, les manifestations sont interdites et les forces de
+ sécurité répriment brutalement toute contestation. Des organisations
+ comme Amnesty International ont documenté des arrestations arbitraires,
+ des poursuites politiques et au moins 47 morts lors de répressions de
+ protestations <sup><a href="#footnote4">[4]</a></sup>. Nous ne
+ pouvons pas cautionner un processus constitutionnel organisé dans
+ un climat de peur.
+ </p>
+<h3>Une opposition muselée</h3>
+<p>
+ Plusieurs partis historiques ont été suspendus et la principale
+ formation d’opposition, l’UFDG, est placée sous surveillance
+ <sup><a href="#footnote5">[5]</a></sup>. Dans ces conditions, il est
+ impossible d’organiser un débat pluraliste et libre sur l’avenir de la
+ nation.
+ </p>
+<h3>Des disparitions et kidnappings</h3>
+<p>
+ Nos rangs sont frappés par de nombreuses disparitions et kidnappings.
+ Le 9 juillet 2024, deux militants du Front national pour la défense
+ de la Constitution (FNDC), Oumar Sylla et Mamadou Billo Bah,
+ ont été arrêtés par des hommes armés, emmenés vers l’archipel des
+ Loos et torturés ; depuis, leurs proches n’ont plus de nouvelles
+ d’eux et les autorités n’ont jamais diligenté d’enquête sérieuse
+ <sup><a href="#footnote6">[6]</a></sup>. Le 3 décembre 2024, le
+ journaliste Habib Marouane Camara a été enlevé à Conakry par des
+ hommes en uniforme et demeure introuvable
+ <sup><a href="#footnote6">[6]</a></sup>. Le 19 février 2025,
+ l’opposant Abdoul Sacko a été kidnappé par des inconnus, torturé
+ puis abandonné grièvement blessé à la périphérie de la ville, tandis
+ que le 20 juin 2025 l’avocat Mohamed Traoré était à son tour enlevé
+ et violemment frappé avant d’être retrouvé avec des blessures
+ <sup><a href="#footnote6">[6]</a></sup>. Ces enlèvements, dénoncés
+ par le barreau comme une « escalade de la terreur », montrent que
+ nous ne pouvons accorder notre confiance à un pouvoir qui
+ persécute ses opposants.
+ </p>
+<h3>Des morts suspectes et tentatives d’enlèvement</h3>
+</section>
+<section id="manifeste">
+<h2>Notre manifeste</h2>
+<p>
+ Nous rêvons d’une Guinée où chaque citoyen est écouté et respecté. Notre
+ mouvement s’appuie sur trois piliers :
+ </p>
+<h3>Démocratie</h3>
+<p>
+ La souveraineté appartient au peuple. Aucune réforme ne peut être
+ imposée sans une participation active et informée des Guinéennes et
+ Guinéens.
+ </p>
+<h3>Justice et transparence</h3>
+<p>
+ Les institutions doivent protéger les droits et garantir l’égalité de
+ toutes et tous. La transparence est essentielle pour rétablir la
+ confiance entre gouvernants et gouvernés.
+ </p>
+<h3>Transition pacifique</h3>
+<p>
+ Nous plaidons pour une transition pacifique vers un ordre
+ constitutionnel démocratique, sans violence ni répression.
+ </p>
+</section>
+
+<section id="contact">
+<p>
+ Ensemble, faisons entendre notre voix pour une Guinée juste et
+ démocratique.
+ </p>
+<br/>
+</section>
+<footer class="footnotes">
+<ol>
+<li id="footnote1">
+ RFI, « Guinée : l'opposition dénonce l'usage des moyens de l'État pour
+ soutenir le “oui” au référendum » : article du 6 août 2025 qui
+ rapporte la convocation du référendum et souligne la mobilisation de
+ ressources publiques pour promouvoir le « oui ».
+ </li>
+<li id="footnote2">
+ DNE Africa, « Guinea Opposition Calls September Protests Over New
+ Constitution » : article du 12 août 2025 décrivant le rejet du projet
+ constitutionnel par la coalition des Forces vives de Guinée et
+ l’appel à des manifestations contre une prolongation du mandat du
+ général Doumbouya.
+ </li>
+<br/><li id="footnote3">
+ Reuters, « Guinea junta leader schedules constitutional référendum for
+ Sept. 21 » : article du 14 août 2025 indiquant que la junte, au
+ pouvoir depuis le coup d’État de septembre 2021, a promis une
+ transition de deux ans mais a manqué la date limite du 31 décembre
+ 2024 et que le projet de constitution pourrait lui permettre de se
+ présenter à l’élection présidentielle malgré l’interdiction
+ initiale.
+ </li>
+<li id="footnote4">
+ DNE Africa, « Guinea Opposition Calls September Protests Over New
+ Constitution » : le même article signale que des organisations comme
+ Amnesty International dénoncent au moins 47 morts et de nombreuses
+ arrestations arbitraires lors des manifestations de 2022‑2024.
+ </li>
+<li id="footnote5">
+ Reuters, « Guinea junta leader schedules constitutional référendum for
+ Sept. 21 » : ce rapport précise que plusieurs partis de l’ex‑majorité
+ ont été suspendus et que l’UFDG, principale formation d’opposition,
+ est sous étroite surveillance des autorités.
+ </li>
+<li id="footnote6">
+ Amnesty International, « Guinea : One year after the enforced
+ disappearance of FNDC activists, abductions increase in a “climate of
+ terror” » (8 juillet 2025) : ce rapport documente l’enlèvement des
+ militants Oumar Sylla et Mamadou Billo Bah le 9 juillet 2024, leur
+ transfert vers l’archipel des Loos et leur torture ; il rappelle
+ l’enlèvement du journaliste Habib Marouane Camara le 3 décembre 2024
+ et signale les cas d’Abdoul Sacko (19 février 2025) et de l’avocat
+ Mohamed Traoré (20 juin 2025), tous deux enlevés, torturés puis
+ relâchés blessés. L’Ordre des avocats dénonce une escalade des
+ kidnappings et un climat de terreur où aucune enquête n’aboutit.
+ </li>
+<li id="footnote7">
+ African Arguments, « Guinea: When the putschists overstay their
+ welcome » (septembre 2024) : l’article rapporte la mort en détention
+ du général Sadiba Koulibaly, ancien numéro deux de la junte. Les
+ autorités invoquent un stress et un traumatisme sévère, mais la
+ population soupçonne un assassinat politique.
+ </li>
+<br/></ol>
+</footer>
+<section id="references">
+<ol>
+Référence :
+<li id="ref-reuters-2024"><a href="https://www.reuters.com/world/africa/guineas-new-draft-constitution-will-reduce-limit-presidential-term-2024-07-30/" rel="noopener" target="_blank">Reuters – Projet de constitution (30/07/2024)</a> : possibilité pour Doumbouya de participer à la présidentielle.</li>
+<li id="ref-constitutionnet-2025"><a href="https://constitutionnet.org/news/guineas-new-draft-constitution-sparks-debate-over-presidential-term-limits" rel="noopener" target="_blank">ConstitutionNet – Débat sur les mandats et candidature possible de Doumbouya (02/07/2025)</a>.</li>
+<li id="ref-africanews-2025"><a href="https://fr.africanews.com/2025/07/03/guinee-le-projet-constitutionnel-propose-un-septennat-renouvelable/" rel="noopener" target="_blank">Africanews – Article 74 : immunité civile et pénale pour les ex‑présidents (03/07/2025)</a>.</li>
+<li id="ref-lebrief-2025"><a href="https://www.lebrief.ma/afrique/guinee-le-mandat-presidentiel-porte-a-sept-ans-dans-le-projet-de-nouvelle-constitution-100107646/" rel="noopener" target="_blank">Le Brief – Clause d’immunité et contradictions juridiques avec la Cour spéciale (03/07/2025)</a>.</li>
+<li id="ref-rfi-2025"><a href="https://www.rfi.fr/fr/afrique/20250703-guin%C3%A9e-le-contenu-du-projet-de-nouvelle-constitution-rendu-public-par-les-autorit%C3%A9s-de-transition" rel="noopener" target="_blank">RFI – Contenu du projet et tension entre l’article 74 et la Cour spéciale (03/07/2025)</a>.</li>
+<li id="ref-hrw-2024"><a href="https://www.hrw.org/fr/news/2024/12/02/guinee-les-droits-humains-en-peril-alors-que-la-transition-promise-se-fait-attendre" rel="noopener" target="_blank">Human Rights Watch – Répression de l’opposition et retard du retour à l’ordre constitutionnel (02/12/2024)</a>.</li>
+</ol>
+</section>
+<script defer="" src="/assets/patch-actualites-v30.js"></script>
+<script defer="" src="/assets/cleanup-home-v38.js"></script>
+<script defer="" src="/assets/cleanup-global-v39.js"></script>
+<script defer="" src="/assets/cleanup-v41.js"></script>
+<footer class="mcbr-footer" id="mcbr-footer" role="contentinfo">
+<style>
+    .mcbr-footer{margin-top:2rem;padding:1rem 0;text-align:center;border-top:1px solid #eee;font-size:.9rem;color:#555}
+    .mcbr-footer a{color:inherit;text-decoration:underline}
+  </style>
+</footer>
+
+
+
+
+
+<section id="Actualités" style="background-color:#fff3cd; padding:6px; border-radius:10px; border:2px solid #ffeeba;">
+<p style="font-size:1.1em; line-height:1.6;">
+<strong>Le pouvoir guinéen orchestre une campagne massive</strong> pour le « Oui » à la nouvelle constitution,
+ en détournant les <strong>ressources et canaux de l’État</strong> pour une opération de <strong>propagande institutionnelle</strong>.
+ Ce texte <strong>taillé sur mesure</strong> est présenté comme déjà adopté par ses partisans, transformant le
+ scrutin en une véritable <span style="color:red; font-weight:bold;">parodie d’élection</span>.
+ </p>
+<p style="font-size:1.1em; line-height:1.6;">
+ Dans le même temps, une <span style="color:red; font-weight:bold;">chasse aux sorcières</span> s’intensifie contre les organisateurs de manifestations pacifiques
+ réclamant le <strong>retour à l’ordre constitutionnel</strong> : arrestations arbitraires, poursuites ciblées,
+ interdictions administratives. Les opposants sont <strong>empêchés d’être enrôlés</strong> dans le fichier électoral
+ et certains sont <strong>interdits de rentrer au pays</strong>, exclus d’office de toute compétition politique.
+ </p>
+<p style="font-size:1.1em; line-height:1.6;">
+ Cette manœuvre, financée par <strong>l’argent du contribuable</strong>, est menée alors que la junte
+ <strong>règne par la force et la peur</strong>, prenant en otage un peuple <strong>démuni</strong> et muselant
+ l’expression pluraliste nécessaire à toute démocratie.
+ </p>
+<h3 style="margin-top:6px;">📚 </h3>
+<ul style="line-height:1.6;">
+<li><a href="https://primature.gov.gn/projet-de-nouvelle-constitution-le-gouvernement-sengage-a-assurer-une-large-vulgarisation/" rel="noopener" target="_blank">
+ Primature de Guinée (4 juil. 2025) – « Large vulgarisation » du projet par le gouvernement</a></li>
+<li><a href="https://guineenews.org/2025/07/28/vulgarisation-de-la-constitution-quand-linformation-bascule-en-campagne-pour-le-oui-a-linterieur-du-pays/" rel="noopener" target="_blank">
+ Guinéenews (28 juil. 2025) – Quand la « vulgarisation » bascule en campagne pour le Oui</a></li>
+<li><a href="https://www.hrw.org/fr/news/2024/12/02/guinee-les-droits-humains-en-peril-alors-que-la-transition-promise-se-fait-attendre" rel="noopener" target="_blank">
+ Human Rights Watch (2 déc. 2024) – Répression, transition qui déraille</a></li>
+<li><a href="https://www.amnesty.org/en/location/africa/west-and-central-africa/guinea/report-guinea/" rel="noopener" target="_blank">
+ Amnesty International – Rapport Guinée 2024/2025 : manifestations interdites, arrestations et climat de peur</a></li>
+<li><a href="https://www.rfi.fr/fr/afrique/20250703-guin%C3%A9e-le-contenu-du-projet-de-nouvelle-constitution-rendu-public-par-les-autorit%C3%A9s-de-transition" rel="noopener" target="_blank">
+ RFI (7 janv. 2025) – Condamnation à 2 ans de prison de l’opposant Aliou Bah</a></li>
+</ul>
+</section>
+</body>
+</html>
+<section class="tight" id="nous-contacter-min">
+<h2 class="tight">Nous contacter</h2>
+<p>Écrivez‑nous à <a href="mailto:info@non21septguinee.org" rel="noopener" target="_blank">info@non21septguinee.org</a>.</p>
+<p class="tight">Ensemble, faisons entendre notre voix pour une Guinée juste et démocratique.</p>
+</section>

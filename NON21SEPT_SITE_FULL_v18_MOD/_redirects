@@ -1,0 +1,3 @@
+/petition    /petition/index.html  200
+/petition/*  /petition/:splat      200
+/*           /index.html           200

@@ -1,0 +1,20 @@
+[build]
+  publish = "./"
+  command = ""
+
+[[redirects]]
+  from = "/petition"
+  to   = "/petition/index.html"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from = "/petition/*"
+  to   = "/petition/:splat"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
+  status = 200
